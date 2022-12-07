@@ -5,15 +5,47 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-size: 16px;
 }
 
 :root {
     --dark-bg-color: #1F2937;
     --white-txt-color: #F9FAF8;
     --blue-btn-color: #3882F6;
-    --padding-left: 10vw;
-    --pading-right: 10vw;
+    --padding-left: 10rem;
+    --padding-right: 8rem;
 }
+
+@media only screen and (min-width: 768px) {
+    * {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (min-width: 1024) {
+    * {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    * {
+        font-size: 18px;
+        --padding-left: 16rem;
+        --padding-right: 14rem;
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    * {
+        font-size: 21px;
+        --padding-left: 18rem;
+        --padding-right: 16rem;
+    }
+}
+
+
+
 
 body {
     display: flex;
@@ -21,10 +53,6 @@ body {
     /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
     font-family: Roboto, sans-serif;
     height: 100vh;
-}
-
-.container {
-    flex-grow: 1;
 }
 
 /* ########## */
@@ -36,85 +64,80 @@ body {
     align-items: center;
     background-color: var(--dark-bg-color);
     padding-left: var(--padding-left);
-    padding-right: var(--pading-right);
-    font-size: 1em;
-    font-weight: 500;
+    padding-right: var(--padding-right);
+    padding-top: 0.5rem;
+    font-size: 1rem;
+    font-weight: 700;
 }
 
-/* suboptimal bc. svg repeats itself - height 30px of svg img*/
-.header-left {
-    height: 44px;
-    padding-top: 7px;
-    padding-bottom: 7px;
+.header-left img {
+    width: 2rem;
 }
-
 
 .header-right a {
-    margin-left: 14px;
+    margin-left: 1.5rem;
     color: var(--white-txt-color);
     text-decoration: none;
 }
 
-
-/* Body */
 button {
     background-color: var(--blue-btn-color);
     color: var(--white-txt-color);
-    font-weight: 300;
-    font-size: 16px;
-    border-radius: 6px 6px;
+    font-weight: 500;
+    font-size: 1rem;
+    border-radius: 0.4rem 0.4rem;
     border: none;
-    padding: 5px 15px;
+    padding: 0.6rem 1.4rem;
     align-self: flex-start;
-
-
 }
 
 /* ########## */
 /* Section-Top */
 /* ########## */
 .section-top {
+    flex-grow: 1;
     display: flex;
     background-color: var(--dark-bg-color);
     color: var(--white-txt-color);
     padding-left: var(--padding-left);
-    padding-right: var(--pading-right);
+    padding-right: var(--padding-right);
     padding-top: 2em;
     padding-bottom: 2em;
     gap: 2em;
-
 }
 
 .section-top-left {
     display: flex;
     flex-direction: column;
-    width: 40vw;
+    width: 100%;
+    max-width: 40rem;
 }
 
 .section-top-left h2 {
-    font-size: 48px;
-    margin-bottom: 2px;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
 }
 
 .section-top-left p {
-    font-size: 18px;
-    margin-bottom: 6px;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 
 .section-top-right {
-    width: 40vw;
+    width: 100%;
 }
 
 .section-top-right img {
     width: 100%;
-    height: auto;
+    min-width: 30vw;
 }
 
 /* ################# */
 /* Section Middle 1 */
 /* ############### */
 .section-middle-1 {
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -122,29 +145,30 @@ button {
 }
 
 .section-middle-1 h4 {
-    font-size: 36px;
-    margin-top: 20px;
-    margin-bottom: 15px;
+    font-size: 2.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .s-m1-items {
     display: flex;
-    gap: 25px;
+    gap: 1.51rem;
 }
 
 .s-m1-item {
-    width: 15vw;
+    width: 10rem;
+    height: 14rem;
 }
 
 .s-m1-items img {
-    width: 100%;
-    height: 15vw;
-    border: 2px solid var(--blue-btn-color);
-    border-radius: 7px 7px;
+    width: 10rem;
+    height: 10rem;
+    border: 3px solid var(--blue-btn-color);
+    border-radius: 6px 6px;
 }
 
 .s-m1-items p {
-    font-size: 1em;
+    font-size: 1rem;
     text-align: center;
 }
 
@@ -152,19 +176,23 @@ button {
 /* Section Quote */
 /* ############### */
 .quote {
+    flex-grow: 1;
     background-color: #E5E7EB;
-    font-size: 28px;
+    font-size: 1.5rem;
     font-style: italic;
-    font-weight: light;
-    padding: 2em;
-    padding-left: 9em;
-    padding-right: 6em;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    font-weight: 100;
+
+    padding: 1em;
+    /* padding-left: calc(var(--padding-left)*1.5);
+    padding-right: calc(var(--padding-right)*1.5); */
+    padding-left: 12rem;
+    padding-right: 10rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 .quote-author {
-    font-size: 18px;
+    font-size: 1rem;
     font-weight: 700;
     text-align: right;
     font-style: normal;
@@ -175,32 +203,34 @@ button {
 /* ############### */
 
 .section-bottom {
+    flex-grow: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 50px;
+    margin-bottom: 3rem;
+    max-height: fit-content;
 }
 
 .sb-box {
     display: flex;
-    gap: 90px;
-    padding: 30px 65px;
-    border-radius: 4px 4px;
+    gap: 5rem;
+    padding: 2rem 4rem;
+    border-radius: 0.25rem 0.25rem;
     background-color: var(--blue-btn-color);
     color: var(--white-txt-color);
 }
 
 .sb-box button {
-    border: 1px solid var(--white-txt-color);
+    border: 0.0625rem solid var(--white-txt-color);
 }
 
 .sb-text {
-    font-size: 14px;
+    font-size: 0.8rem;
     font-weight: 100;
 }
 
 .sb-heading {
-    font-size: 20px;
+    font-size: 1.4rem;
     font-weight: 600;
 }
 
@@ -214,6 +244,6 @@ button {
     align-items: center;
     background-color: var(--dark-bg-color);
     color: var(--white-txt-color);
-    font-size: 16px;
-    padding: 14px;
+    font-size: 1rem;
+    padding: 0.8rem;
 }
